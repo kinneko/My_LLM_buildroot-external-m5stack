@@ -4,7 +4,7 @@
 # This file is part of https://github.com/kinneko/My_LLM_buildroot-external-m5stack.
 # Licensed under the GNU General Public License v3.0.
 # See <https://www.gnu.org/licenses/gpl-3.0.html>.
-# copyright (c) kinneko kinneko@gmail.com
+# copyright (c) 2025 kinneko kinneko@gmail.com
 
 BUILD_DIR="Module_LLM_buildroot"
 DEFCONFIG="m5stack_module_llm_4_19_defconfig"
@@ -121,7 +121,7 @@ done
 
 # 依存パッケージのインストール
 recho "Install packages..."
-sudo apt-get install debianutils sed make binutils build-essential gcc g++ bash patch gzip bzip2 perl tar cpio unzip rsync file bc git cmake p7zip-full python3 python3-pip expect libssl-dev qemu-user-static zip simg2img android-sdk-libsparse-utils mtools e2fsprogs libpcre3 -y -qq
+sudo apt-get install debianutils sed make binutils build-essential gcc g++ bash patch gzip bzip2 perl tar cpio unzip rsync file bc git cmake p7zip-full python3 python3-pip expect libssl-dev qemu-user-static zip simg2img android-sdk-libsparse-utils mtools e2fsprogs libpcre3 libncurses-dev -y -qq
 
 # Buildroot のダウンロードと展開
 recho "Download and extract Buildroot"

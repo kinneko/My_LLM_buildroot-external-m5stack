@@ -7,7 +7,7 @@
 # This file is part of https://github.com/kinneko/My_LLM_buildroot-external-m5stack.
 # Licensed under the GNU General Public License v3.0.
 # See <https://www.gnu.org/licenses/gpl-3.0.html>.
-# copyright (c) kinneko kinneko@gmail.com
+# copyright (c) 2025 kinneko kinneko@gmail.com
 
 TARGETS=("Module_LLM_buildroot" "external_resources")
 
