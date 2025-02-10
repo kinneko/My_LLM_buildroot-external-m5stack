@@ -26,7 +26,6 @@ recho() {
     printf "${REVERSE}>>> %s${RESET}\n" "$1"
 }
 
-
 # 共通関数: ファイルのダウンロード
 download_file() {
     local filename="$1"
@@ -109,6 +108,14 @@ download_and_extract() {
 }
 
 recho "Script Start !"
+
+# root 権限で実行されているか確認
+if [ "$(id -u)" -ne 0 ]; then
+    echo "Error: This script must be run as root. use sudo." >&2
+    echo "use sudo $0" >&2
+    exit 1
+fi
+
 # 必要なディレクトリの作成
 for dir in "$BUILD_DIR" "$EXT_DIR"; do
     if [ ! -d "$dir" ]; then
@@ -121,7 +128,7 @@ done
 
 # 依存パッケージのインストール
 recho "Install packages..."
-sudo apt-get install debianutils sed make binutils build-essential gcc g++ bash patch gzip bzip2 perl tar cpio unzip rsync file bc git cmake p7zip-full python3 python3-pip expect libssl-dev qemu-user-static zip simg2img android-sdk-libsparse-utils mtools e2fsprogs libpcre3 libncurses-dev -y -qq
+apt-get install debianutils sed make binutils build-essential gcc g++ bash patch gzip bzip2 perl tar cpio unzip rsync file bc git cmake p7zip-full python3 python3-pip expect libssl-dev qemu-user-static zip simg2img android-sdk-libsparse-utils mtools e2fsprogs libpcre3 libncurses-dev -y -qq
 
 # Buildroot のダウンロードと展開
 recho "Download and extract Buildroot"
