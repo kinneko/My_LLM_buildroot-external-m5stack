@@ -50,24 +50,6 @@ download_file() {
     fi
 }
 
-# 共通関数: ファイルの展開
-extract_file() {
-    local filename="$1"
-    local dest_dir="$2"
-    local extract_command="$3"
-    # ファイルの展開
-    recho "Extracting $filename..."
-    eval "$extract_command"
-    
-    # 展開が成功したか確認
-    if [ -d "$dest_dir" ]; then
-        recho "Extraction complete: $dest_dir"
-    else
-        recho "Error: Extraction failed for $filename."
-        exit 1
-    fi
-}
-
 # 共通関数: ファイルのダウンロードと展開
 download_and_extract() {
     local filename="$1"
