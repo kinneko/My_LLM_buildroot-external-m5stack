@@ -9,7 +9,7 @@
 BUILD_DIR="Module_LLM_buildroot"
 DEFCONFIG="m5stack_module_llm_4_19_defconfig"
 CURRENTDIR=$(pwd)
-EXT_DIR="${CURRENTDIR}external_resources"
+EXT_DIR="${CURRENTDIR}/external_resources"
 
 BUILDROOT_FILE="buildroot-st2023.02.10.zip"
 BUILDROOT_SRC="https://github.com/bootlin/buildroot/archive/refs/heads/st/2023.02.10.zip"
