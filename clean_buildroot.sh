@@ -15,6 +15,9 @@ if [ "$(id -u)" -ne 0 ]; then
     exit 1
 fi
 
+# axpをバックアップ
+mv ./Module_LLM_buildroot/buildroot/output/*.axp ./
+
 TARGETS=("Module_LLM_buildroot")
 
 echo "=== Clean Buildroot Script ==="
