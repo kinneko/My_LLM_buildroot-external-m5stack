@@ -122,22 +122,6 @@ else
     recho "Buildroot directory already exists. Skipping extraction."
 fi
 
-# dl.7z のダウンロードと展開
-recho "Download and extract some files"
-if [ ! -d "$BUILDROOT_DIR/dl" ]; then
-    recho "dl directory does not exist. Extracting..."
-    download_and_extract "$DL7Z_FILE" "$DL7Z_SRC" "$BUILDROOT_DIR/dl" \
-        "7z x '$EXT_DIR/$DL7Z_FILE' -o'$BUILDROOT_DIR/dl' -bsp0 -bse0 -aos"
-else
-    recho "dl directory already exists. Skipping extraction."
-fi
-
-# uboot のダウンロード
-recho "Download uboot files"
-UBOOT_FILE="120d25a7105454d381030fa4a24f9ab9267f36a2.tar.gz"
-UBOOT_SRC="https://github.com/dianjixz/module_LLM_uboot/archive/120d25a7105454d381030fa4a24f9ab9267f36a2.tar.gz"
-download_file "$UBOOT_FILE" "$UBOOT_SRC"
-
 # Buildroot の実行
 recho " "
 recho "Buildroot start!"
