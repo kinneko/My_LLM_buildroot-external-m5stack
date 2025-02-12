@@ -9,7 +9,7 @@
 # See <https://www.gnu.org/licenses/gpl-3.0.html>.
 # copyright (c) 2025 kinneko kinneko@gmail.com
 
-TARGETS=("Module_LLM_buildroot" "external_resources")
+TARGETS=("Module_LLM_buildroot")
 
 echo "=== Clean Buildroot Script ==="
 
