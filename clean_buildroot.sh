@@ -9,6 +9,12 @@
 # See <https://www.gnu.org/licenses/gpl-3.0.html>.
 # copyright (c) 2025 kinneko kinneko@gmail.com
 
+# root 権限で実行されているか確認
+if [ "$(id -u)" -ne 0 ]; then
+    echo "Error: This script must be run as root. use sudo." >&2
+    exit 1
+fi
+
 TARGETS=("Module_LLM_buildroot")
 
 echo "=== Clean Buildroot Script ==="
